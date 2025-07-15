@@ -43,23 +43,23 @@ We release four datasets with the resolution 256*256. You can download them at [
 
 You can run our code by instructions like these:
 
-  python instruct_all_in_one/lowlight_pipeline.py --result_dir XX --sample_dir XX --text_dir XX
-  python instruct_all_in_one/dehazing_pipeline.py --result_dir XX --sample_dir XX --text_dir XX
-  python instruct_all_in_one/denoising_pipeline.py --result_dir XX --sample_dir XX --text_dir XX
+    python instruct_all_in_one/lowlight_pipeline.py --result_dir XX --sample_dir XX --text_dir XX
+    python instruct_all_in_one/dehazing_pipeline.py --result_dir XX --sample_dir XX --text_dir XX
+    python instruct_all_in_one/denoising_pipeline.py --result_dir XX --sample_dir XX --text_dir XX
 
 We also prepare a fast version by using float16 diffusion. You can refer it by:
 
-  python instruct_all_in_one/lowlight_pipeline_16fp.py --result_dir XX --sample_dir XX --text_dir XX
+    python instruct_all_in_one/lowlight_pipeline_16fp.py --result_dir XX --sample_dir XX --text_dir XX
 
 If you want to run in multiple GPU devices, you can run:
 
-  sh multi_run.sh
+    sh multi_run.sh
 
 ## Evaluating
 
 You can get quantitive scores by running:
 
-  sh evaluation.sh
+    sh evaluation.sh
 
 ## Citation
 If you use our project, please consider citing:
