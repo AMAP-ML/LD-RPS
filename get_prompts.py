@@ -15,8 +15,8 @@ IMAGENET_STD = (0.229, 0.224, 0.225)
 
 def create_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--sample_dir", type=str, default='/mnt/workspace/lhq/all-in-one/2024-ICML-TAO/test_samples/CBSD68_256/original')
-    parser.add_argument("--save_prompt_dir", type=str, default='/mnt/workspace/lhq/all-in-one/2024-ICML-TAO/test_samples/CBSD68_256/p')
+    parser.add_argument("--sample_dir", type=str, default='./data/LOLv1/input')
+    parser.add_argument("--save_prompt_dir", type=str, default='./data/LOLv1/prompt')
     return parser.parse_args()
 
 def build_transform(input_size):
@@ -104,7 +104,7 @@ model = AutoModel.from_pretrained(
 tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True, use_fast=False)
 
 image_extensions = ('.jpg', '.jpeg', '.png', '.bmp', '.gif', '.tiff', '.webp')
-question = '<image>\nPlease briefly describe what the content should look like under colorful condition. Please reply with words or phrases, not exceeding 20 words. \
+question = '<image>\nThis is a low-quality image. Please briefly describe what the content should look like under normal and high-quality condition. Please reply with words or phrases, not exceeding 20 words. \
     Please emphasize the main subject in the description and try to include details such as color and orientation.'
 # 遍历图像
 for file_name in os.listdir(args.sample_dir):
